@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="apple.png" type="image/icon type" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Phone</title>
+  </head>
+  <body>
+    <div class="phone-frame" id="phone-frame">
+      <div class="phone-frame-inside">
+        <div class="phone-frame-notch">
+          <div class="notch-cam"></div>
+          <div class="speaker-grill"></div>
+        </div>
+      </div>
+      <div class="phone-frame-home">
+        <a></a>
+      </div>
+    </div>
+    <div class="color-radio-container">
+      <input type="radio" name="color" id="gold" class="color-radio" value="gold">
+      <label for="gold" class="color-radio-label">Gold</label>
+      <input type="radio" name="color" id="silver" class="color-radio" value="silver">
+      <label for="silver" class="color-radio-label">Silver</label>
+      <input type="radio" name="color" id="deep-purple" class="color-radio" value="deep-purple">
+      <label for="deep-purple" class="color-radio-label">Deep-Purple</label>
+      <input type="radio" name="color" id="space-black" class="color-radio" value="space-black">
+      <label for="space-black" class="color-radio-label">Space-Black</label>
+    </div>      
+
+    <script>
+      const colorRadios = document.querySelectorAll('.color-radio');
+      const phoneFrameInside = document.querySelector('.phone-frame-inside');
+      const phoneFrame = document.querySelector('#phone-frame');
+
+      colorRadios.forEach((radio) => {
+        radio.addEventListener('change', () => {
+          phoneFrameInside.style.backgroundImage = `url(${radio.id}.png)`;
+
+          switch(radio.id) {
+            case "gold":
+              phoneFrame.style.borderColor = "#d8ada5";
+              break;
+            case "silver":
+              phoneFrame.style.borderColor = "#F5F5F0";
+              break;
+            case "deep-purple":
+              phoneFrame.style.borderColor = "#B8AFE6";
+              break;
+            case "space-black":
+              phoneFrame.style.borderColor = "#5C5B57";
+              break;
+            default:
+              break;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
